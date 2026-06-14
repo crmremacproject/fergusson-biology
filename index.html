@@ -324,32 +324,6 @@ main,header,footer{position:relative;z-index:1}
 .mobile-menu.open{display:block}
 .mobile-menu a{display:block;padding:.85rem clamp(18px,5vw,40px);color:var(--text);border-top:1px solid var(--line);font-weight:500}
 
-/* ===== FUTURE-PROOF SCORE (subject comparison) ===== */
-.compare{background:linear-gradient(180deg,var(--paper-2),var(--paper))}
-.cmp{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(1.2rem,3.5vw,2.2rem);box-shadow:var(--shadow-lg)}
-.cmp-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.cmp-table{display:grid;grid-template-columns:minmax(104px,1.3fr) repeat(4,1fr);gap:.5rem .35rem;align-items:center;justify-items:center;min-width:312px}
-.ring{position:relative;text-align:center;align-self:start}
-.ring svg{width:clamp(56px,8.6vw,104px);height:clamp(56px,8.6vw,104px);display:block;margin:0 auto}
-.rb{fill:none;stroke:rgba(11,61,46,.08);stroke-width:9}
-.rf{fill:none;stroke-width:9;stroke-linecap:round;transform-box:fill-box;transform-origin:center;transform:rotate(-90deg);stroke-dasharray:100;stroke-dashoffset:calc(100 - var(--w));transition:stroke-dashoffset 1.5s cubic-bezier(.2,.8,.2,1)}
-.reveal:not(.in) .rf{stroke-dashoffset:100}
-.ring-bio .rf{stroke:#10B981} .ring-geo .rf{stroke:#F59E0B} .ring-it .rf{stroke:#3B82F6} .ring-cs .rf{stroke:#8B5CF6}
-.ring-bio svg{filter:drop-shadow(0 7px 14px rgba(16,185,129,.40))}
-.ring-c{position:absolute;left:0;right:0;top:0;height:clamp(56px,8.6vw,104px);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:clamp(1rem,1.9vw,1.55rem);color:var(--forest)}
-.ring-bio .ring-c{color:var(--emerald-d)}
-.ring-name{margin-top:.35rem;font-size:clamp(.64rem,1.1vw,.8rem);font-weight:600;color:var(--muted);line-height:1.15}
-.ring-bio .ring-name{color:var(--emerald-d);font-weight:700}
-.ct-sep{grid-column:1/-1;height:1px;width:100%;background:var(--line);margin:.25rem 0 .4rem}
-.ct-label{justify-self:start;text-align:left;width:100%;font-weight:600;color:var(--forest);font-size:.86rem;line-height:1.35}
-.mini{position:relative;width:clamp(34px,4.4vw,46px);height:clamp(34px,4.4vw,46px);border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--c) calc(var(--w)*1%),rgba(11,61,46,.08) 0)}
-.mini::before{content:"";position:absolute;inset:5px;border-radius:50%;background:var(--white)}
-.mini b{position:relative;font-family:var(--display);font-weight:700;font-size:clamp(.64rem,1vw,.76rem);color:var(--forest)}
-.mini.is-top::after{content:"";position:absolute;inset:-3px;border-radius:50%;border:2px solid var(--c)}
-.m-bio{--c:#10B981} .m-geo{--c:#F59E0B} .m-it{--c:#3B82F6} .m-cs{--c:#8B5CF6}
-.cmp-note{margin-top:1.4rem;font-size:.84rem;color:var(--muted);background:var(--paper);border:1px dashed var(--line);border-radius:var(--radius-sm);padding:.85rem 1.1rem;line-height:1.7}
-.cmp-note b{color:var(--emerald-d)}
-
 /* ===== FACULTY ===== */
 .faculty{margin-top:2.2rem;border-top:1px solid var(--line);padding-top:1.8rem}
 .faculty__title{font-size:clamp(1.3rem,2.6vw,1.7rem);color:var(--forest);text-align:center}
@@ -378,6 +352,11 @@ main,header,footer{position:relative;z-index:1}
 .fac{padding:.3rem 1rem .3rem .3rem;gap:.65rem}
 .fac-ph{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center 38%;flex:0 0 auto;border:1px solid var(--line);box-shadow:0 4px 10px -4px rgba(11,61,46,.4)}
 .faculty__grid{grid-template-columns:repeat(auto-fill,minmax(228px,1fr))}
+
+.scope{align-items:flex-start}
+.scope .emp{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.scope .emp span{font-size:.6rem;color:var(--muted);background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-weight:600;line-height:1.6}
+.scopes-note{text-align:center;font-size:.74rem;color:var(--muted);margin-top:.7rem}
 </style>
 </head>
 
@@ -825,39 +804,6 @@ main,header,footer{position:relative;z-index:1}
   </div>
 </section>
 
-<!-- ====================== FUTURE-PROOF SCORE (comparison) ====================== -->
-<section class="section compare" id="compare">
-  <div class="wrap">
-    <div class="section__head reveal">
-      <span class="eyebrow">The honest comparison</span>
-      <h2>How future-proof is your subject?</h2>
-      <p>Every subject builds a brilliant mind — Geography, IT and Computer Science open wonderful careers too. This scorecard measures just one thing: how well each path holds up as AI automates more of the world. Biology scores high because care, judgement and life itself are the hardest things to automate.</p>
-    </div>
-
-    <div class="cmp reveal">
-      <div class="cmp-scroll"><div class="cmp-table">
-        <div class="ct-corner"></div>
-        <div class="ring ring-bio"><svg viewBox="0 0 120 120"><circle class="rb" cx="60" cy="60" r="52"/><circle class="rf" cx="60" cy="60" r="52" pathLength="100" style="--w:91"/></svg><div class="ring-c">91</div><div class="ring-name">Biology</div></div>
-        <div class="ring ring-geo"><svg viewBox="0 0 120 120"><circle class="rb" cx="60" cy="60" r="52"/><circle class="rf" cx="60" cy="60" r="52" pathLength="100" style="--w:73"/></svg><div class="ring-c">73</div><div class="ring-name">Geography</div></div>
-        <div class="ring ring-it"><svg viewBox="0 0 120 120"><circle class="rb" cx="60" cy="60" r="52"/><circle class="rf" cx="60" cy="60" r="52" pathLength="100" style="--w:68"/></svg><div class="ring-c">68</div><div class="ring-name">IT</div></div>
-        <div class="ring ring-cs"><svg viewBox="0 0 120 120"><circle class="rb" cx="60" cy="60" r="52"/><circle class="rf" cx="60" cy="60" r="52" pathLength="100" style="--w:68"/></svg><div class="ring-c">68</div><div class="ring-name">Computer Sci.</div></div>
-        <div class="ct-sep"></div>
-        <div class="ct-label">AI can't replace the human touch</div><span class="mini m-bio is-top" style="--w:96"><b>96</b></span><span class="mini m-geo" style="--w:74"><b>74</b></span><span class="mini m-it" style="--w:48"><b>48</b></span><span class="mini m-cs" style="--w:44"><b>44</b></span>
-        <div class="ct-label">Lifelong job security</div><span class="mini m-bio is-top" style="--w:91"><b>91</b></span><span class="mini m-geo" style="--w:70"><b>70</b></span><span class="mini m-it" style="--w:76"><b>76</b></span><span class="mini m-cs" style="--w:79"><b>79</b></span>
-        <div class="ct-label">Hands-on, real-world work</div><span class="mini m-bio is-top" style="--w:93"><b>93</b></span><span class="mini m-geo" style="--w:82"><b>82</b></span><span class="mini m-it" style="--w:58"><b>58</b></span><span class="mini m-cs" style="--w:55"><b>55</b></span>
-        <div class="ct-label">Solves humanity's big problems</div><span class="mini m-bio is-top" style="--w:95"><b>95</b></span><span class="mini m-geo" style="--w:80"><b>80</b></span><span class="mini m-it" style="--w:64"><b>64</b></span><span class="mini m-cs" style="--w:66"><b>66</b></span>
-        <div class="ct-label">Works <em>with</em> AI as a tool</div><span class="mini m-bio" style="--w:90"><b>90</b></span><span class="mini m-geo" style="--w:72"><b>72</b></span><span class="mini m-it" style="--w:88"><b>88</b></span><span class="mini m-cs is-top" style="--w:92"><b>92</b></span>
-        <div class="ct-label">Global career mobility</div><span class="mini m-bio is-top" style="--w:88"><b>88</b></span><span class="mini m-geo" style="--w:66"><b>66</b></span><span class="mini m-it" style="--w:86"><b>86</b></span><span class="mini m-cs" style="--w:88"><b>88</b></span>
-        <div class="ct-label">Recession-proof demand</div><span class="mini m-bio is-top" style="--w:90"><b>90</b></span><span class="mini m-geo" style="--w:68"><b>68</b></span><span class="mini m-it" style="--w:72"><b>72</b></span><span class="mini m-cs" style="--w:74"><b>74</b></span>
-        <div class="ct-label">Emotional &amp; human connection</div><span class="mini m-bio is-top" style="--w:92"><b>92</b></span><span class="mini m-geo" style="--w:75"><b>75</b></span><span class="mini m-it" style="--w:46"><b>46</b></span><span class="mini m-cs" style="--w:42"><b>42</b></span>
-        <div class="ct-label">Entrepreneurship potential</div><span class="mini m-bio" style="--w:84"><b>84</b></span><span class="mini m-geo" style="--w:60"><b>60</b></span><span class="mini m-it" style="--w:82"><b>82</b></span><span class="mini m-cs is-top" style="--w:86"><b>86</b></span>
-        <div class="ct-label">Knowledge that never goes obsolete</div><span class="mini m-bio is-top" style="--w:95"><b>95</b></span><span class="mini m-geo" style="--w:84"><b>84</b></span><span class="mini m-it" style="--w:56"><b>56</b></span><span class="mini m-cs" style="--w:54"><b>54</b></span>
-        </div></div>
-      <p class="cmp-note"><b>One lens, not a verdict.</b> These scores illustrate resilience to automation over the coming decades — not the worth of any subject or the talent of its teachers. Geography, IT and Computer Science remain outstanding, in-demand choices, and the best path is the one a student truly loves. Biology simply happens to sit furthest from what AI can fully replace.</p>
-    </div>
-  </div>
-</section>
-
 <!-- ====================== 50 CAREERS ====================== -->
 <section class="section scopes" id="scopes">
   <div class="wrap">
@@ -867,58 +813,59 @@ main,header,footer{position:relative;z-index:1}
       <p>Biology doesn't lock you into a single job. Here are 50 real career paths it opens — pick any direction, and there's a strong future waiting in it.</p>
     </div>
     <div class="scope-grid reveal">
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-stetho"/></svg></span><div><b>Doctor (MBBS)</b><span>Diagnose and treat patients</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-scalpel"/></svg></span><div><b>Surgeon</b><span>Perform life-saving operations</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-tooth"/></svg></span><div><b>Dentist (BDS)</b><span>Teeth, gums &amp; oral health</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-capsule"/></svg></span><div><b>Pharmacist</b><span>Medicines and drug safety</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-physio"/></svg></span><div><b>Physiotherapist</b><span>Movement and rehabilitation</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-cross"/></svg></span><div><b>Nurse</b><span>Frontline patient care</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-paw"/></svg></span><div><b>Veterinarian</b><span>Animal health and surgery</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-flask"/></svg></span><div><b>Biotechnologist</b><span>Engineer living systems</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-dna"/></svg></span><div><b>Geneticist</b><span>Genes, heredity and DNA</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-microbe"/></svg></span><div><b>Microbiologist</b><span>Microbes, bacteria, viruses</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-molecule"/></svg></span><div><b>Biochemist</b><span>The chemistry of life</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-dna"/></svg></span><div><b>Molecular Biologist</b><span>DNA, RNA and proteins</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-shield"/></svg></span><div><b>Immunologist</b><span>Immune system and vaccines</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-chart"/></svg></span><div><b>Bioinformatician</b><span>Biology meets big data</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-capsule"/></svg></span><div><b>Pharmacologist</b><span>How drugs act on the body</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-clipboard"/></svg></span><div><b>Clinical Researcher</b><span>Trials for new cures</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-virus"/></svg></span><div><b>Epidemiologist</b><span>Track and stop outbreaks</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-microscope"/></svg></span><div><b>Pathologist</b><span>Diagnose disease from samples</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-monitor"/></svg></span><div><b>Radiologist</b><span>Medical imaging and scans</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-apple"/></svg></span><div><b>Nutritionist / Dietician</b><span>Food and diet science</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-wheat"/></svg></span><div><b>Agricultural Scientist</b><span>Better crops and farming</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-pot"/></svg></span><div><b>Horticulturist</b><span>Plants, orchards and gardens</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-leaf"/></svg></span><div><b>Botanist</b><span>The science of plant life</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-animal"/></svg></span><div><b>Zoologist</b><span>The science of animal life</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-fish"/></svg></span><div><b>Marine Biologist</b><span>Ocean life and reefs</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-bird"/></svg></span><div><b>Wildlife Biologist</b><span>Conservation of species</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-earth"/></svg></span><div><b>Environmental Scientist</b><span>Protecting ecosystems</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-sprout"/></svg></span><div><b>Ecologist</b><span>The balance of nature</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-fingerprint"/></svg></span><div><b>Forensic Scientist</b><span>Solve crimes with biology</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-fork"/></svg></span><div><b>Food Technologist</b><span>Safer, better food</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-heart"/></svg></span><div><b>Genetic Counselor</b><span>Guide on inherited risk</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-gear"/></svg></span><div><b>Biomedical Engineer</b><span>Design medical devices</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-tank"/></svg></span><div><b>Bioprocess Engineer</b><span>Scale up bio-manufacturing</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-factory"/></svg></span><div><b>Pharma Production</b><span>Make medicines at scale</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-people"/></svg></span><div><b>Public Health Officer</b><span>Community health programs</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-building"/></svg></span><div><b>Hospital Administrator</b><span>Run healthcare systems</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-pen"/></svg></span><div><b>Medical Writer</b><span>Communicate science clearly</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-gradcap"/></svg></span><div><b>Teacher / Professor</b><span>Educate the next generation</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-microscope"/></svg></span><div><b>Research Scientist</b><span>Push the frontiers</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-cells"/></svg></span><div><b>Stem Cell Scientist</b><span>Regenerative medicine</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-ribbon"/></svg></span><div><b>Cancer Researcher</b><span>Oncology and new therapies</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-brain"/></svg></span><div><b>Neuroscientist</b><span>Brain and nervous system</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-dna"/></svg></span><div><b>Synthetic Biologist</b><span>Design new biology</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-planet"/></svg></span><div><b>Astrobiologist</b><span>Search for life in space</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-dumbbell"/></svg></span><div><b>Sports Scientist</b><span>Human performance</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-eye"/></svg></span><div><b>Optometrist</b><span>Eye care and vision</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-ear"/></svg></span><div><b>Audiologist</b><span>Hearing and balance</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-skull"/></svg></span><div><b>Toxicologist</b><span>Poisons and safety science</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-rocket"/></svg></span><div><b>Biotech Entrepreneur</b><span>Build bio start-ups</span></div></div>
-      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-drug"/></svg></span><div><b>Drug Discovery Scientist</b><span>Invent new medicines</span></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-stetho"/></svg></span><div><b>Doctor (MBBS)</b><span>Diagnose and treat patients</span><div class="emp"><span>Apollo Hospitals</span><span>Fortis</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-scalpel"/></svg></span><div><b>Surgeon</b><span>Perform life-saving operations</span><div class="emp"><span>Tata Memorial</span><span>Manipal</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-tooth"/></svg></span><div><b>Dentist (BDS)</b><span>Teeth, gums &amp; oral health</span><div class="emp"><span>Apollo White</span><span>Clove Dental</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-capsule"/></svg></span><div><b>Pharmacist</b><span>Medicines and drug safety</span><div class="emp"><span>Apollo Pharmacy</span><span>Cipla</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-physio"/></svg></span><div><b>Physiotherapist</b><span>Movement and rehabilitation</span><div class="emp"><span>Portea</span><span>Fortis</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-cross"/></svg></span><div><b>Nurse</b><span>Frontline patient care</span><div class="emp"><span>Apollo</span><span>Manipal Hospitals</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-paw"/></svg></span><div><b>Veterinarian</b><span>Animal health and surgery</span><div class="emp"><span>Zoetis</span><span>Vetina</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-flask"/></svg></span><div><b>Biotechnologist</b><span>Engineer living systems</span><div class="emp"><span>Biocon</span><span>Serum Institute</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-dna"/></svg></span><div><b>Geneticist</b><span>Genes, heredity and DNA</span><div class="emp"><span>MedGenome</span><span>Mapmygenome</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-microbe"/></svg></span><div><b>Microbiologist</b><span>Microbes, bacteria, viruses</span><div class="emp"><span>Bharat Biotech</span><span>Thermo Fisher</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-molecule"/></svg></span><div><b>Biochemist</b><span>The chemistry of life</span><div class="emp"><span>Dr. Reddy's</span><span>Cipla</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-dna"/></svg></span><div><b>Molecular Biologist</b><span>DNA, RNA and proteins</span><div class="emp"><span>Biocon</span><span>Illumina</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-shield"/></svg></span><div><b>Immunologist</b><span>Immune system and vaccines</span><div class="emp"><span>Serum Institute</span><span>GSK</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-chart"/></svg></span><div><b>Bioinformatician</b><span>Biology meets big data</span><div class="emp"><span>MedGenome</span><span>TCS</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-capsule"/></svg></span><div><b>Pharmacologist</b><span>How drugs act on the body</span><div class="emp"><span>Sun Pharma</span><span>Novartis</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-clipboard"/></svg></span><div><b>Clinical Researcher</b><span>Trials for new cures</span><div class="emp"><span>IQVIA</span><span>Syngene</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-virus"/></svg></span><div><b>Epidemiologist</b><span>Track and stop outbreaks</span><div class="emp"><span>ICMR</span><span>WHO</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-microscope"/></svg></span><div><b>Pathologist</b><span>Diagnose disease from samples</span><div class="emp"><span>Dr Lal PathLabs</span><span>Metropolis</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-monitor"/></svg></span><div><b>Radiologist</b><span>Medical imaging and scans</span><div class="emp"><span>Apollo</span><span>Krsnaa Diagnostics</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-apple"/></svg></span><div><b>Nutritionist / Dietician</b><span>Food and diet science</span><div class="emp"><span>HealthifyMe</span><span>Apollo</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-wheat"/></svg></span><div><b>Agricultural Scientist</b><span>Better crops and farming</span><div class="emp"><span>ICAR</span><span>UPL</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-pot"/></svg></span><div><b>Horticulturist</b><span>Plants, orchards and gardens</span><div class="emp"><span>Mahindra Agri</span><span>Namdhari</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-leaf"/></svg></span><div><b>Botanist</b><span>The science of plant life</span><div class="emp"><span>ICAR</span><span>BSI</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-animal"/></svg></span><div><b>Zoologist</b><span>The science of animal life</span><div class="emp"><span>ZSI</span><span>WWF</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-fish"/></svg></span><div><b>Marine Biologist</b><span>Ocean life and reefs</span><div class="emp"><span>NIO</span><span>CMFRI</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-bird"/></svg></span><div><b>Wildlife Biologist</b><span>Conservation of species</span><div class="emp"><span>WWF</span><span>WII</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-earth"/></svg></span><div><b>Environmental Scientist</b><span>Protecting ecosystems</span><div class="emp"><span>TERI</span><span>CPCB</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-sprout"/></svg></span><div><b>Ecologist</b><span>The balance of nature</span><div class="emp"><span>ATREE</span><span>TERI</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-fingerprint"/></svg></span><div><b>Forensic Scientist</b><span>Solve crimes with biology</span><div class="emp"><span>CFSL</span><span>State FSL</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-fork"/></svg></span><div><b>Food Technologist</b><span>Safer, better food</span><div class="emp"><span>Nestlé</span><span>ITC</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-heart"/></svg></span><div><b>Genetic Counselor</b><span>Guide on inherited risk</span><div class="emp"><span>MedGenome</span><span>Fortis</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-gear"/></svg></span><div><b>Biomedical Engineer</b><span>Design medical devices</span><div class="emp"><span>GE Healthcare</span><span>Philips</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-tank"/></svg></span><div><b>Bioprocess Engineer</b><span>Scale up bio-manufacturing</span><div class="emp"><span>Biocon</span><span>Praj</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-factory"/></svg></span><div><b>Pharma Production</b><span>Make medicines at scale</span><div class="emp"><span>Sun Pharma</span><span>Cipla</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-people"/></svg></span><div><b>Public Health Officer</b><span>Community health programs</span><div class="emp"><span>WHO</span><span>NHM</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-building"/></svg></span><div><b>Hospital Administrator</b><span>Run healthcare systems</span><div class="emp"><span>Apollo</span><span>Max Healthcare</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-pen"/></svg></span><div><b>Medical Writer</b><span>Communicate science clearly</span><div class="emp"><span>Indegene</span><span>IQVIA</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-gradcap"/></svg></span><div><b>Teacher / Professor</b><span>Educate the next generation</span><div class="emp"><span>Fergusson College</span><span>Universities</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-microscope"/></svg></span><div><b>Research Scientist</b><span>Push the frontiers</span><div class="emp"><span>CSIR</span><span>IISc</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-cells"/></svg></span><div><b>Stem Cell Scientist</b><span>Regenerative medicine</span><div class="emp"><span>Stempeutics</span><span>LifeCell</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-ribbon"/></svg></span><div><b>Cancer Researcher</b><span>Oncology and new therapies</span><div class="emp"><span>Tata Memorial</span><span>ACTREC</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-brain"/></svg></span><div><b>Neuroscientist</b><span>Brain and nervous system</span><div class="emp"><span>NIMHANS</span><span>NBRC</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-dna"/></svg></span><div><b>Synthetic Biologist</b><span>Design new biology</span><div class="emp"><span>String Bio</span><span>Ginkgo</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-planet"/></svg></span><div><b>Astrobiologist</b><span>Search for life in space</span><div class="emp"><span>ISRO</span><span>NASA</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-dumbbell"/></svg></span><div><b>Sports Scientist</b><span>Human performance</span><div class="emp"><span>SAI</span><span>JSW Sports</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-eye"/></svg></span><div><b>Optometrist</b><span>Eye care and vision</span><div class="emp"><span>Lenskart</span><span>Titan Eye+</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-ear"/></svg></span><div><b>Audiologist</b><span>Hearing and balance</span><div class="emp"><span>Cochlear</span><span>Amplifon</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-skull"/></svg></span><div><b>Toxicologist</b><span>Poisons and safety science</span><div class="emp"><span>FSSAI</span><span>ITRC</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-rocket"/></svg></span><div><b>Biotech Entrepreneur</b><span>Build bio start-ups</span><div class="emp"><span>BIRAC</span><span>T-Hub</span></div></div></div>
+      <div class="scope"><span class="ico"><svg aria-hidden="true"><use href="#ic-drug"/></svg></span><div><b>Drug Discovery Scientist</b><span>Invent new medicines</span><div class="emp"><span>Dr. Reddy's</span><span>Aurigene</span></div></div></div>
     </div>
     <p class="scopes__more reveal">…and many more — every one of these <b>starts with Biology in Class 11.</b></p>
+    <p class="scopes-note">Example employers shown are illustrative; all trademarks belong to their respective owners.</p>
   </div>
 </section>
 
@@ -931,19 +878,21 @@ main,header,footer{position:relative;z-index:1}
       <p class="lead">Take the first step today. Talk to our Biology faculty at Fergusson College and secure your place for the 2026 academic year.</p>
 
       <div class="enquire-actions">
-        <a class="btn btn--glow" href="https://wa.me/919529551248" target="_blank" rel="noopener">
+        <a class="btn btn--glow" href="https://wa.me/919421003847" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2zm0 2a8 8 0 11-4.2 14.8l-.3-.2-2.9.9.9-2.8-.2-.3A8 8 0 0112 4zm-3 4.5c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.2.2 1.8 2.9 4.5 3.9 2.2.8 2.7.7 3.2.6.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.2-.2.3-.7.9-.8 1-.1.2-.3.2-.5.1-.3-.1-1.2-.5-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6 0-.1-.7-1.7-.9-2.3-.2-.5-.4-.5-.6-.5h-.6z"/></svg>
           Enquire on WhatsApp
         </a>
-        <a class="btn btn--ghost" href="tel:+919529551248">
+        <a class="btn btn--ghost" href="tel:+919421003847">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h3l2 5-2 1a11 11 0 005 5l1-2 5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linejoin="round"/></svg>
           Call the department
         </a>
       </div>
 
       <div class="contact-row">
-        <a href="tel:+919529551248"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h3l2 5-2 1a11 11 0 005 5l1-2 5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linejoin="round"/></svg>+91 9529551248</a>
-        <a href="mailto:gauri.gaikwad@despune.org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6" stroke-linecap="round"/></svg>gauri.gaikwad@despune.org</a>
+        <a href="tel:+919421003847"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h3l2 5-2 1a11 11 0 005 5l1-2 5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linejoin="round"/></svg>+91 94210 03847</a>
+        <a href="tel:+919850966123"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h3l2 5-2 1a11 11 0 005 5l1-2 5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke-linejoin="round"/></svg>+91 98509 66123</a>
+        <a href="mailto:vijay.zambare@despune.org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6" stroke-linecap="round"/></svg>vijay.zambare@despune.org</a>
+        <a href="mailto:vijayzambare@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6" stroke-linecap="round"/></svg>vijayzambare@gmail.com</a>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21c5-5 7-8.5 7-12a7 7 0 00-14 0c0 3.5 2 7 7 12z" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.5"/></svg>Fergusson College, FC Road, Pune</span>
       </div>
 
